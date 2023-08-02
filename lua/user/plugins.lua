@@ -40,55 +40,73 @@ packer.init({
 
 -- Install your plugins here
 return packer.startup(function(use)
-  use { "wbthomason/packer.nvim" } -- Have packer manage itself
-  use { "nvim-lua/plenary.nvim" } -- Useful lua functions used by lots of plugins
-  use { "windwp/nvim-autopairs" } -- Autopairs, integrates with both cmp and treesitter
-  use { "numToStr/Comment.nvim" }
-  use { "JoosepAlviste/nvim-ts-context-commentstring" }
-  use { "kyazdani42/nvim-web-devicons" }
-  use { "kyazdani42/nvim-tree.lua" }
-  use { "akinsho/bufferline.nvim" }
-	use { "moll/vim-bbye" }
-  use { "nvim-lualine/lualine.nvim" }
-  use { "akinsho/toggleterm.nvim" }
-  use { "ahmedkhalf/project.nvim" }
-  use { "lewis6991/impatient.nvim" }
-  use { "lukas-reineke/indent-blankline.nvim" }
-  use { "goolord/alpha-nvim" }
-	use {"folke/which-key.nvim"}
+  use "wbthomason/packer.nvim"  -- Have packer manage itself
+  use "nvim-lua/plenary.nvim"  -- Useful lua functions used by lots of plugins
+  use "nvim-lua/popup.nvim"
+  use "windwp/nvim-autopairs"  -- Autopairs, integrates with both cmp and treesitter
+  use "numToStr/Comment.nvim" 
+  use "JoosepAlviste/nvim-ts-context-commentstring"
+  use "kyazdani42/nvim-web-devicons"
+  use "kyazdani42/nvim-tree.lua"
+  use "akinsho/bufferline.nvim"
+	use "moll/vim-bbye" 
+  use "nvim-lualine/lualine.nvim"
+  use "akinsho/toggleterm.nvim"
+  use "ahmedkhalf/project.nvim"
+  use "lewis6991/impatient.nvim"
+  use "lukas-reineke/indent-blankline.nvim"
+  use "goolord/alpha-nvim"
+	use "folke/which-key.nvim"
 
 	-- Colorschemes
   use {"adisen99/codeschool.nvim", requires = {"rktjmp/lush.nvim"}}
+  use "marko-cerovac/material.nvim"
 
 	-- Cmp 
-  use { "hrsh7th/nvim-cmp" } -- The completion plugin
-  use { "hrsh7th/cmp-buffer" } -- buffer completions
-  use { "hrsh7th/cmp-path" } -- path completions
-	use { "saadparwaiz1/cmp_luasnip" } -- snippet completions
-	use { "hrsh7th/cmp-nvim-lsp" }
-	use { "hrsh7th/cmp-nvim-lua" }
+  use "hrsh7th/nvim-cmp" -- The completion plugin
+  use "hrsh7th/cmp-buffer"  -- buffer completions
+  use "hrsh7th/cmp-path"  -- path completions
+	use "saadparwaiz1/cmp_luasnip"  -- snippet completions
+	use "hrsh7th/cmp-nvim-lsp" 
+	use "hrsh7th/cmp-nvim-lua" 
+  use "PaterJason/cmp-conjure"
 
-	-- Snippets
-  use { "L3MON4D3/LuaSnip" } --snippet engine
-  use { "rafamadriz/friendly-snippets" } -- a bunch of snippets to use
+  -- Clojure
+  use "Olical/conjure"
+  use "tpope/vim-dispatch"
+  use "clojure-vim/vim-jack-in"
+  use "radenling/vim-dispatch-neovim"
+
+  -- s-exp
+  use "guns/vim-sexp"
+  use "tpope/vim-sexp-mappings-for-regular-people"
+  use "tpope/vim-repeat"
+  use "tpope/vim-surround"
+
+  -- Snippets
+  use "L3MON4D3/LuaSnip"  --snippet engine
+  use "rafamadriz/friendly-snippets"  -- a bunch of snippets to use
+  use "honza/vim-snippets"
 
 	-- LSP
-	use { "neovim/nvim-lspconfig" } -- enable LSP
-  use { "williamboman/nvim-lsp-installer", "neovim/nvim-lspconfig", }
-  use { "williamboman/mason.nvim"} -- simple to use language server installer
-  use { "williamboman/mason-lspconfig.nvim" }
-	use { "jose-elias-alvarez/null-ls.nvim" } -- for formatters and linters
-  use { "RRethy/vim-illuminate" }
+	use "neovim/nvim-lspconfig"  -- enable LSP
+  use "williamboman/nvim-lsp-installer"
+  use "williamboman/mason.nvim" -- simple to use language server installer
+  use "williamboman/mason-lspconfig.nvim" 
+	use "jose-elias-alvarez/null-ls.nvim"  -- for formatters and linters
+  use "RRethy/vim-illuminate" 
 
 	-- Telescope
-	use { "nvim-telescope/telescope.nvim" }
+	use "nvim-telescope/telescope.nvim" 
 
 	-- Treesitter
-	use {
-		"nvim-treesitter/nvim-treesitter" }
+	use "nvim-treesitter/nvim-treesitter" 
 
 	-- Git
-	use { "lewis6991/gitsigns.nvim" }
+	use "lewis6991/gitsigns.nvim" 
+
+  -- Git Copilot
+  use "github/copilot.vim"
 
 	-- Automatically set up your configuration after cloning packer.nvim
 	-- Put this at the end after all plugins
